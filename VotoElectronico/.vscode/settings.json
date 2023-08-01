@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\lib\\mysql-connector-j-8.1.0.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.base.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.controls.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.fxml.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.graphics.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.media.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.swing.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx.web.jar",
+        "c:\\Users\\Stali\\OneDrive\\Documentos\\NetBeansProjects\\VotoElectronico\\libjavafx-swt.jar"
+    ]
+}

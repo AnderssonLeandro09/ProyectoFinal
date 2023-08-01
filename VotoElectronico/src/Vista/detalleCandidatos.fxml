@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="314.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controlador.DetalleCandidatosController">
+   <children>
+      <Label fx:id="txtPartidoPolitico" text="Partido Politico" />
+      <ImageView fx:id="imagenP" fitHeight="113.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true" />
+      <CheckBox fx:id="chekSelec" mnemonicParsing="false" prefHeight="11.0" prefWidth="16.0" />
+      <ImageView fx:id="imagenC" fitHeight="140.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="txtNombreC" text="Nombre:" />
+   </children>
+</VBox>

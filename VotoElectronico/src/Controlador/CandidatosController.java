@@ -43,7 +43,7 @@ import javafx.scene.input.MouseEvent;
 /**
  * FXML Controller class
  *
- * @author Stali
+ * @author Sergio Jumbo
  */
 public class CandidatosController implements Initializable {
     Blob blob;

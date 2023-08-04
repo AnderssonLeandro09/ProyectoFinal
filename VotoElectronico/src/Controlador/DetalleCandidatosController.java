@@ -6,6 +6,7 @@ package Controlador;
 
 import Controlador.Dao.PartidoPoliticoDao;
 import Controlador.Dao.PersonaDao;
+import Controlador.Lista.ListaEnlazada;
 import Modelo.Candidato;
 import Modelo.PartidoPolitico;
 import Modelo.Persona;
@@ -22,24 +23,18 @@ import java.sql.Blob;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
- * @author Stali
+ * @author Sergio Jumbo
  */
 public class DetalleCandidatosController implements Initializable {
-    private Candidato candidato;
-
-    public Candidato getCandidato() {
-        return candidato;
-    }
-
-    public void setCandidato(Candidato candidato) {
-        this.candidato = candidato;
-    }
     PersonaDao personadao = new PersonaDao();
     PartidoPoliticoDao partidopdao = new PartidoPoliticoDao();
+    Candidato candidatoL;
+    private PapeletaController pepeleta;
     @FXML
     private Label txtPartidoPolitico;
     @FXML
@@ -56,19 +51,17 @@ public class DetalleCandidatosController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            cargar();
-        } catch (SQLException ex) {
-            Logger.getLogger(DetalleCandidatosController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }    
-    public void cargar() throws SQLException{
+    public void cargar(Candidato candidato,PapeletaController p) throws SQLException{
         Persona persona = personadao.objeto(candidato.getIdPersona());
         PartidoPolitico partido = partidopdao.objeto(candidato.getIdPartidoPolitico());
         txtPartidoPolitico.setText(partido.getNombre());
         txtNombreC.setText(persona.getNombre()+" "+persona.getApellido());
         imagenP.setImage(sacarImagen(partido.getLogo()));
-        imagenC.setImage(sacarImagen(candidato.getImagen()));        
+        imagenC.setImage(sacarImagen(candidato.getImagen()));     
+        candidatoL = candidato;
+        pepeleta = p;
     }
     public Image sacarImagen(Blob blob) throws SQLException {
         Image image = null;
@@ -76,4 +69,23 @@ public class DetalleCandidatosController implements Initializable {
         image = new Image(in, 200, 200, true, true);
         return image;
     }    
+
+    @FXML
+    private void CandidatoSeleccion(MouseEvent event) {
+        if (chekSelec.isSelected()) {
+            pepeleta.agregarVoto(candidatoL);
+        }else{
+            pepeleta.removerVoto(candidatoL);
+        }
+    }
+    public boolean isSeleccionado(){
+        return chekSelec.isSelected();
+    }
+    public void candidatoSelection(ListaEnlazada<Candidato> candidato){
+        if (isSeleccionado()) {
+            candidato.insertarNodo(candidatoL);
+        }else{
+            
+        }
+    }   
 }
